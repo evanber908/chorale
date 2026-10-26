@@ -15,12 +15,6 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ],
-  "start_url": "./index.html",
-  "background_color": "#ffffff",
-  "theme_color": "#2c3e50",
-  "display": "standalone",
-  "orientation": "portrait-primary",
-  "scope": "./",
-  "description": "Application de consultation des chansons et paroles de la chorale."
+  ]
+  
 }
