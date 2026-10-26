@@ -88,7 +88,8 @@ header img {
 /* =========================================
    4. COMPOSANTS PRINCIPAUX (Boutons, Cartes)
    ========================================= */
-button {
+
+   button {
     background-color: white;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
@@ -107,6 +108,27 @@ button {
 #btn-retour img {
     width: 35px;
     height: auto;
+}
+
+/* btn telecharger les paroles */
+.btn-telecharger {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    background-color: #2c3e50; /* Reprend la couleur de votre thème */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.btn-telecharger:hover {
+    background-color: #34495e;
 }
 
 /* Grille de liens (Tableau de bord) */
