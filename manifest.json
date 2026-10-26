@@ -19,6 +19,8 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "start_url": "./index.html",
+  "description": "Application de consultation des chansons et paroles de la chorale."
   
 }
