@@ -1,0 +1,73 @@
+const CACHE_NAME = 'chorale-v1';
+
+// Liste des ressources essentielles à mettre en cache pour l'accès hors-ligne
+const ASSETS_TO_CACHE = [
+  './',
+  './index.html',
+  './seconde.html',
+  './css/style.css',
+  './img/m_mini.png',
+  './img/fleche.png',
+  './img/logochorale.png',
+  './img/symphonique.png',
+  './audio/chorale/seconde/BS VOIX _Stand on the word.mp3',
+  './audio/chorale/seconde/BS VOIX AUDIO_Javais rêvé.mp3',
+  './audio/chorale/seconde/BS VOIX SA_Alter Ego.mp3',
+  './audio/chorale/seconde/BS VOIX SA_Let the sunshine in.mp3',
+  './audio/chorale/seconde/BS VOIX SA_Quand le rideau tombe.mp3',
+  './audio/chorale/seconde/BS VOIX SA_Un homme heureux.mp3',
+  './audio/chorale/seconde/BS VOIX_1987 Calogero.mp3',
+  './audio/chorale/seconde/BS VOIX_le temps des cathédrales.mp3',
+  './audio/chorale/seconde/BS_VOIX__Sanson_Medley2.mp3',
+  './audio/chorale/seconde/Medley Queen Voix + Bs.mp3',
+  './audio/chorale/seconde/BS VOIX_Et bam resto.mp3',
+];
+
+// Installation du Service Worker et mise en cache initiale
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[Service Worker] Mise en cache des ressources');
+      return cache.addAll(ASSETS_TO_CACHE);
+    })
+  );
+  self.skipWaiting();
+});
+
+// Activation du Service Worker et nettoyage des anciens caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log('[Service Worker] Suppression du vieux cache:', cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+// Interception des requêtes réseau (stratégie : Réseau d'abord, secours sur le cache si hors-ligne)
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    fetch(event.request)
+      .then((networkResponse) => {
+        // Si la requête réussi, on enregistre une copie fraîche dans le cache
+        if (event.request.method === 'GET' && networkResponse.status === 200) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
+      })
+      .catch(() => {
+        // En cas de coupure internet, on sert la version en cache
+        return caches.match(event.request);
+      })
+  );
+});

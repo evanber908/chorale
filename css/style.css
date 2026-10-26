@@ -158,6 +158,11 @@ button {
     text-transform: uppercase;
 }
 
+.banniere {
+    width:100%;
+    object-fit:cover;
+    height: 350;
+}
 /* =========================================
    5. ÉLÉMENTS SPÉCIFIQUES AUX PAGES
    ========================================= */
