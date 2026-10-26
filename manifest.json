@@ -1,11 +1,11 @@
 {
-  "id": "/chorale/",
+  "id": "https://evanber908.github.io/chorale/",
+  "scope": "/chorale/",
   "short_name": "Chorale",
   "name": "Chorale - Paroles & Musiques",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2c3e50",
-  "scope": "./",
   "icons": [
     {
       "src": "img/192_logochorale.png",
