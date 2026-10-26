@@ -10,17 +10,6 @@ const ASSETS_TO_CACHE = [
   './img/fleche.png',
   './img/logochorale.png',
   './img/symphonique.png',
-  './audio/chorale/seconde/BSVOIXStandontheword.mp3',
-  './audio/chorale/seconde/BSVOIXAUDIO_Javaisreve.mp3',
-  './audio/chorale/seconde/BSVOIXSA_AlterEgo.mp3',
-  './audio/chorale/seconde/BSVOIXSA_Letthesunshinein.mp3',
-  './audio/chorale/seconde/BSVOIXSA_Quandlerideautombe.mp3',
-  './audio/chorale/seconde/BSVOIXSA_Unhommeheureux.mp3',
-  './audio/chorale/seconde/BSVOIX1987Calogero.mp3',
-  './audio/chorale/seconde/BSVOIX_letempsdescathedrales.mp3',
-  './audio/chorale/seconde/BSVOIXSansonMedley2.mp3',
-  './audio/chorale/seconde/MedleyQueenVoixBs.mp3',
-  './audio/chorale/seconde/BSVOIXEtbamresto.mp3',
 ];
 
 // Installation du Service Worker et mise en cache initiale
