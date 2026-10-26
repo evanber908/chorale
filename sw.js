@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chorale-v1';
+const CACHE_NAME = 'chorale-v2';
 
 // Liste des ressources essentielles à mettre en cache pour l'accès hors-ligne
 const ASSETS_TO_CACHE = [
