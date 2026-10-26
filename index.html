@@ -39,5 +39,14 @@
                 <h3>Année de seconde, 40 ans en symphonique</h3>
             </a>
         </main>
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then((reg) => console.log('Service Worker enregistré avec succès :', reg.scope))
+                .catch((err) => console.error('Échec d\'enregistrement du Service Worker :', err));
+            });
+        }
+        </script>
     </body>
 </html>
