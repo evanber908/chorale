@@ -1,5 +1,5 @@
 {
-  "id": "/chorale-app-v1/",
+  "id": "/chorale/",
   "short_name": "Chorale",
   "name": "Chorale - Paroles & Musiques",
   "display": "standalone",
@@ -8,13 +8,13 @@
   "scope": "./",
   "icons": [
     {
-      "src": "192_logochorale.png",
+      "src": "img/192_logochorale.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "512_logochorale.png",
+      "src": "img/512_logochorale.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
