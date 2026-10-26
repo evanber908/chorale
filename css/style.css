@@ -163,6 +163,12 @@ button {
     object-fit:cover;
     height: 350;
 }
+
+.annonce {
+    width: auto;
+    object-fit: cover;
+    height: 20vw;
+}
 /* =========================================
    5. ÉLÉMENTS SPÉCIFIQUES AUX PAGES
    ========================================= */
@@ -238,6 +244,13 @@ embed.all {
 
     #ParolesList {
         flex: 65%;
+        height: 40vw;
+        height: 85vh; /* Occupe 85% de la hauteur de l'écran en grand format */
+    }
+    
+    #ParolesList embed.all {
+        width: 100%;
+        height: 215%; /* S'adapte à la hauteur définie du parent */
     }
 
     #SongList {
